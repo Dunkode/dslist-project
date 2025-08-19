@@ -1,4 +1,4 @@
-package br.dev.ederson.intensivao.sprintboot.dslistmine;
+package br.dev.ederson.intensivao.spring.dslistmine;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

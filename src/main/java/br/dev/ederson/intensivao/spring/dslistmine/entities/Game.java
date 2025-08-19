@@ -1,4 +1,4 @@
-package br.dev.ederson.intensivao.sprintboot.dslistmine.entities;
+package br.dev.ederson.intensivao.spring.dslistmine.entities;
 
 import jakarta.persistence.*;
 
