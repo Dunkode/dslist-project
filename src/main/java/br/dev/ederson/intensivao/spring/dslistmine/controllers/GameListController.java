@@ -1,10 +1,12 @@
 package br.dev.ederson.intensivao.spring.dslistmine.controllers;
 
 import br.dev.ederson.intensivao.spring.dslistmine.dto.GameListDTO;
-import br.dev.ederson.intensivao.spring.dslistmine.repositories.GameListRepository;
+import br.dev.ederson.intensivao.spring.dslistmine.dto.GameMinDTO;
 import br.dev.ederson.intensivao.spring.dslistmine.services.GameListService;
+import br.dev.ederson.intensivao.spring.dslistmine.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,8 +19,16 @@ public class GameListController {
     @Autowired
     private GameListService gameListService;
 
+    @Autowired
+    private GameService gameService;
+
     @GetMapping
     public List<GameListDTO> findAll() {
         return gameListService.findAll();
+    }
+
+    @GetMapping(value = "/{listId}/games")
+    public List<GameMinDTO> findByList(@PathVariable Long listId) {
+        return gameService.findByList(listId);
     }
 }

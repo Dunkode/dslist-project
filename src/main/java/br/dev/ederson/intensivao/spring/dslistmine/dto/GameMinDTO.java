@@ -1,6 +1,7 @@
 package br.dev.ederson.intensivao.spring.dslistmine.dto;
 
 import br.dev.ederson.intensivao.spring.dslistmine.entities.Game;
+import br.dev.ederson.intensivao.spring.dslistmine.projections.GameMinProjection;
 
 public class GameMinDTO {
     private Long id;
@@ -15,6 +16,14 @@ public class GameMinDTO {
         year = entity.getYear();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
+    }
+
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
     }
 
     public Long getId() {
